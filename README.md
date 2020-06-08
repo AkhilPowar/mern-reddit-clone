@@ -1,0 +1,1 @@
+This project is a reddit clone using the MERN stack
