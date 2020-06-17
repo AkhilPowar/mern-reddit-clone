@@ -1,5 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
 
 class Card extends React.Component {
 
@@ -10,7 +9,7 @@ class Card extends React.Component {
                     <div className="header">{ this.props.title }</div>
                     <div className="meta">{ this.props.time }</div>
                     <div className="description">
-                    <p></p>
+                        { this.props.children }
                     </div>
                 </div>
                 <div className="extra content">
@@ -18,7 +17,7 @@ class Card extends React.Component {
                     { this.props.voteCount } upvotes
                 </div>
             </div>
-        )
+        );
     }
 }
 
