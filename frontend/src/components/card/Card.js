@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class Card extends React.Component {
 
@@ -20,5 +21,15 @@ class Card extends React.Component {
         );
     }
 }
+
+Card.propTypes = {
+    title: PropTypes.string,
+    time: PropTypes.string,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ]),
+    voteCount: PropTypes.number
+};
 
 export default Card;

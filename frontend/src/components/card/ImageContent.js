@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Card from "./Card";
 
 class ImageContent extends React.Component {
@@ -10,5 +11,13 @@ class ImageContent extends React.Component {
         );
     }
 }
+
+ImageContent.propTypes = {
+    title: PropTypes.string,
+    time: PropTypes.string,
+    voteCount: PropTypes.number,
+    imageURL: PropTypes.string
+};
+
 
 export default ImageContent;

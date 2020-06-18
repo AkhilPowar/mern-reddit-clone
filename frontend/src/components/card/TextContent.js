@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Card from "./Card";
 
 class TextContent extends React.Component {
@@ -12,5 +13,12 @@ class TextContent extends React.Component {
         );
     }
 }
+
+TextContent.propTypes = {
+    title: PropTypes.string,
+    time: PropTypes.string,
+    voteCount: PropTypes.number,
+    content: PropTypes.string
+};
 
 export default TextContent;
