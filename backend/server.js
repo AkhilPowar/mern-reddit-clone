@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const generateData = require("./generate-data");
+const postsDB = require("./posts");
 require("./connection/connection");
 
 const PORT = 4000;
@@ -15,8 +15,10 @@ const postRoutes = express.Router();
 app.use("/post", postRoutes);
 
 postRoutes.route("/").get(function(req, res) {
-    generateData.insertRandomPostsIntoDatabase();
-    res.json({ success: true });
+    postsDB.retrievePosts().then((postArray) => {
+        res.json(postArray);
+    });
+    console.log("GET /post called");
 });
 
 // Run server
